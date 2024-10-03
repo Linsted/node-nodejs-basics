@@ -6,9 +6,10 @@ const copy = async () => {
   const NOT_EXIST_ERROR_CODE = "ENOENT";
   const ORIGINAL_FOLDER = "files";
   const COPY_FOLDER = "files_copy";
+  const CURRENT_FOLDER = import.meta.dirname;
 
-  const filesFolderPath = path.resolve(import.meta.dirname, ORIGINAL_FOLDER);
-  const filesCopyFolderPath = path.resolve(import.meta.dirname, COPY_FOLDER);
+  const filesFolderPath = path.resolve(CURRENT_FOLDER, ORIGINAL_FOLDER);
+  const filesCopyFolderPath = path.resolve(CURRENT_FOLDER, COPY_FOLDER);
 
   try {
     await access(filesFolderPath);
